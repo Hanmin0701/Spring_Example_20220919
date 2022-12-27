@@ -9,7 +9,7 @@ import com.example.lesson03.bo.ReviewBO;
 import com.example.lesson03.model.Review;
 
 @RestController
-public class Lesson03Ex01RestController {
+public class Lesson03Ex01RestController { 
 
 	// http://localhost:80/lesson03/ex01/1?id=2
 	

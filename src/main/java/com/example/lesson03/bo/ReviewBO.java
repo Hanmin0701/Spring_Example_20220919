@@ -30,4 +30,14 @@ public class ReviewBO {
 	public int addReviewAsField(int storeId, String menu, String userName, Double point, String review) {
 		return reviewDAO.insertReviewAsField(storeId, menu, userName, point, review);
 	}
+	
+	// ex03_1
+	public int updateReviewById(int id, String review) {
+		return reviewDAO.updateReviewById(id, review);
+	}
+	
+	// ex04_1
+	public void deleteReviewById(int id) { // 다시 안 받는다고 해서 void
+		reviewDAO.deleteReviewById(id);
+	}
 }

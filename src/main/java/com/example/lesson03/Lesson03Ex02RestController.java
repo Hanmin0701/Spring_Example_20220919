@@ -9,7 +9,7 @@ import com.example.lesson03.model.Review;
 
 @RestController
 @RequestMapping("/lesson03/ex02")
-public class Lesson03Ex02RestController {
+public class Lesson03Ex02RestController { // insert문
 
 	// http://localhost:80/lesson03/ex02/1
 	@Autowired

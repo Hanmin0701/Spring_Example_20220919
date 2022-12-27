@@ -20,4 +20,12 @@ public interface ReviewDAO {
 			@Param("userName") String userName,
 			@Param("point") Double point, 
 			@Param("review") String review);
+	
+	// 예제 ex03_1
+	public int updateReviewById(
+			@Param("id") int id, 
+			@Param("review") String review);
+	
+	// 예제 ex04_1
+	public void deleteReviewById(int id);
 }
