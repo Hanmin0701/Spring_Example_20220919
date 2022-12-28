@@ -2,6 +2,7 @@ package com.example.lesson04;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.lesson04.bo.UserBO;
+import com.example.lesson04.model.User;
 
 @Controller
 @RequestMapping("/lesson04/ex01")
@@ -42,10 +44,17 @@ public class Lesson04Ex01Controller {
 	
 	//http://localhost:80/lesson04/ex01/get_last_user_view
 	@GetMapping("/get_last_user_view")
-	public String getLastUserView() {
-		// DB select 
+	public String getLastUserView(Model model) {
 		
-		return "/lesson04/getLastUser";
+		// DB select 
+		// 가장 마지막에 추가된 사람 한명 가져오기
+		User user = userBO.getLastUser(); // 여러개로 가져올거면 List<user>로 하기
+		
+		// model에 데이터를 담아 놓으면 jsp에서 꺼내서 사용을 할 수 있다.
+		model.addAttribute("seller", user);
+		model.addAttribute("title", "회원 정보");
+		
+		
+		return "lesson04/getLastUser"; // 결과 jsp
 	}
-	
 }
