@@ -1,8 +1,13 @@
 package com.example.lesson04.dao;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.example.lesson04.model.Student;
+
 @Repository
-public class StudentDAO {
+public interface StudentDAO {
+
+	public void insertStudent(Student student);
+	
+	public Student selectStudentById(int id);
 }
