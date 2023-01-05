@@ -1,5 +1,8 @@
 package com.example.lesson06;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,5 +58,27 @@ public class Lesson06Controller {
 	@GetMapping("/ex01/after_add_user_view")
 	public String afterAddUserView() {
 		return "/ex01/afterAddUserView";
+	}
+	
+	
+	
+	//  ex02
+	
+	// 이름을 추가하는 화면
+	@GetMapping("/ex02/add_name_view")
+	public String addNameView()	{
+		return "lesson06/ex02/addName";
+	}
+	
+	// 이름 중복확인 - AJAX 통신 확인
+	@ResponseBody
+	@GetMapping("/ex02/is_duplication")
+	public Map<String, Boolean> isDuplication(
+			@RequestParam("name") String name) {
+		
+		Map<String, Boolean> result = new HashMap<>();
+		result.put("isDuplication", userBO.existUserByName(name));
+		return result;
+		
 	}
 }

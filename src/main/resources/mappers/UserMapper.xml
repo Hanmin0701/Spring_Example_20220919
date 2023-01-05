@@ -42,4 +42,13 @@
  	
  	</select>
  	
+ 	<select id="existUserByName" parameterType="String" resultType="boolean">
+ 		SELECT
+			COUNT(*) 		
+ 		FROM
+ 			`new_user`
+ 		WHERE
+			`name` = #{name}
+	</select>
+ 	
  </mapper>
