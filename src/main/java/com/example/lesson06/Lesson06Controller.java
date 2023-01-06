@@ -48,7 +48,7 @@ public class Lesson06Controller {
 			@RequestParam("yyyymmdd") String yyyymmdd, 
 			@RequestParam(value="email", required=false) String email, 
 			@RequestParam(value="introduce", required=false) String introduce) {
-		
+			
 		// DB insert
 		userBO.addUser(name, yyyymmdd, email, introduce);
 		
